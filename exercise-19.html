@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  </head>
+  <body>
+    <section>
+      <img src="./assets/images/bg.jpg" id="bg" />
+      <h2 id="text">Mountains</h2>
+      <img src="./assets/images/man.png" id="man" />
+      <img src="./assets/images/clouds_1.png" id="clouds_1" />
+      <img src="./assets/images/clouds_2.png" id="clouds_2" />
+      <img src="./assets/images/mountain_left.png" id="mountain_left" />
+      <img src="./assets/images/mountain_right.png" id="mountain_right" />
+    </section>
+    <div class="sec">
+      <h2>Text</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque,
+        magnam! Optio pariatur nisi iure blanditiis. Magni ad beatae sapiente
+        numquam eligendi officiis voluptas nemo, recusandae optio quaerat illo
+        error aliquid. Nobis, autem cum eaque temporibus voluptatum nemo maiores
+        eos quaerat, doloremque eius natus laudantium error praesentium facilis
+        possimus minima ullam rerum tempora reprehenderit dolorem sed iusto
+        aperiam facere itaque. Error. Dignissimos placeat temporibus repellat
+        ratione nesciunt earum incidunt reprehenderit, eum distinctio, aut
+        laboriosam. Cumque nihil optio repellat vitae reiciendis quia, iste
+        incidunt! Fuga consectetur, tempore provident voluptatem quisquam quod
+        vel? Totam laudantium beatae alias deserunt, ducimus consequatur nostrum
+        eligendi fugiat molestiae est aut vel nobis, accusamus perspiciatis
+        cumque ex facilis ullam! Sed voluptates unde debitis, incidunt sapiente
+        facilis numquam adipisci? Quia ea consequatur harum quam ex ipsa sequi
+        necessitatibus cumque impedit obcaecati perspiciatis molestiae
+        asperiores quis iste deleniti minima repudiandae delectus omnis
+        consectetur mollitia vitae voluptatem, provident consequuntur dolore?
+        Eveniet. Sed eveniet iste totam dolor quo? Aspernatur quibusdam, quos
+        asperiores illo aliquam nemo labore veritatis alias, aut corrupti
+        reiciendis eum facere nisi odio atque possimus officia quaerat. Non,
+        officia ratione? Tenetur fuga libero nostrum officia, aspernatur
+        provident sunt expedita reprehenderit beatae praesentium facilis sed
+        quasi maxime tempore quibusdam modi ipsa eius est accusamus nisi amet
+        vitae, obcaecati in maiores? Ullam. Libero nostrum et, magnam harum sed
+        nisi error! Porro, sunt eum molestias sit quaerat aspernatur eveniet
+        ipsa culpa illum temporibus. Hic tempore quia velit aspernatur
+        necessitatibus, modi sequi quaerat ad! Excepturi porro, quod, facere
+        possimus, eum vel debitis mollitia voluptatum consequuntur veniam autem
+        eaque? Tenetur saepe reprehenderit iusto esse ipsam culpa repellat
+        quibusdam. Adipisci iste dolorum hic quam natus nemo. Aperiam ipsam quod
+        dolores officiis ut, nisi harum numquam? Harum, optio? Fugit, voluptate
+        natus? Dolorem, sunt. Aliquam, excepturi consectetur harum beatae dolor
+        quibusdam earum ratione voluptatibus atque, repudiandae voluptates
+        optio.
+      </p>
+    </div>
+  </body>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    section {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    section::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(to top, #fff, transparent);
+      z-index: 1000;
+    }
+
+    section img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
+    section img#man {
+    transform-origin: bottom;
+    }
+
+    #text {
+      position: relative;
+      color: white;
+      font-size: 10vw;
+    }
+
+    .sec {
+      position: relative;
+      padding: 100px;
+    }
+
+    .sec h2 {
+      font-size: 3.5em;
+      margin-bottom: 10px;
+      color: blue;
+    }
+    .sec p {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      color: blue;
+    }
+  </style>
+
+
+<script>
+    gsap.to("#bg", {
+        scrollTrigger: {
+            scrub: 1,
+        },
+        scale:1.5
+    });
+    gsap.to("#man", {
+        scrollTrigger: {
+            scrub: 1,
+        },
+        scale:0.5
+    });
+
+    gsap.to("#mountain_left", {
+        scrollTrigger: {
+            scrub: 1,
+        },
+        x:-500
+    });
+    gsap.to("#mountain_right", {
+        scrollTrigger: {
+            scrub: 1,
+        },
+        x:500
+    });
+    gsap.to("#clouds_1", {
+        scrollTrigger: {
+            scrub: 1,
+        },
+        x:200
+    });
+    gsap.to("#clouds_2", {
+        scrollTrigger: {
+            scrub: 1,
+        },
+        x:-200
+    });
+
+     gsap.to("#text", {
+        scrollTrigger: {
+            scrub: 1,
+        },
+        y:500
+    });
+</script>
+</html>

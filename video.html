@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
+    <link
+  href="https://unpkg.com/@videojs/themes@1/dist/city/index.css"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="./video.css">
+</head>
+    <iframe style="border-radius: 1rem;" width="560" height="315" src="https://www.youtube.com/embed/vqXLGX0szIQ?si=wGG3MJU3bCRQnfqG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <video  width="650" height="230" controls  muted loop poster="./assets/images/pikachu.jpg">
+ <source style="border: 2px solid red; object-fit: cover; " src="./assets/video/video.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+    </video>
+
+
+    <video style=" object-fit: cover;"
+    id="my-video"
+    class="video-js vjs-theme-city"
+    controls
+    preload="auto"
+    width="640"
+    height="264"
+    poster="./assets/images/pikachu.jpg"
+    data-setup="{}"
+  >
+    <source src="./assets/video/video.mp4" type="video/mp4" />
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a
+      web browser that
+      <a href="https://videojs.com/html5-video-support/" target="_blank"
+        >supports HTML5 video</a
+      >
+    </p>
+  </video>
+
+  <img src="./assets/images/mp4.png" width="550" height="250" alt="">
+  <img src="./assets/images/webm.png" width="550" height="250" alt="">
+
+
+  <button class="button">login</button>
+
+
+  
+  <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
+</body>
+</html>

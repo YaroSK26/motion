@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Exercise #17 || Mouse follow effect</title>
+
+	<!-- Reset -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css">
+
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap" rel="stylesheet">
+
+	<style>
+
+		/* Air */
+		.magneto {
+			width: 10rem;
+			height: 10rem;
+			border: none;
+			border-radius: 50%;
+			background-color: black;
+			color: white;
+			cursor: pointer;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	</style>
+</head>
+<body style="display: flex;
+justify-content: center; align-items: center; height: 100vh;">
+	
+
+		<!-- Air -->
+		<button class="magneto">
+			<span class="text">text</span>
+		</button>
+		<!-- End Air -->
+	</section>
+
+	<!-- Air -->
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+	<script>
+		const magneto = document.querySelector('.magneto');
+		const magnetoText = document.querySelector('.text');
+
+		const activateMagneto = (event) => {
+			let boundBox = magneto.getBoundingClientRect();
+			const magnetoStrength = 40;
+			const magnetoTextStrength = 80;
+
+			const newX = ((event.clientX - boundBox.left) / magneto.offsetWidth) -0.5
+			const newY = ((event.clientY - boundBox.top) / magneto.offsetHeight) -0.5
+
+			gsap.to(magneto, {
+				x: newX * magnetoStrength,
+				y: newY * magnetoStrength,
+				duration: 1,
+				ease: Power4.easeOut
+			})
+
+			gsap.to(magnetoText, {
+				x: newX * magnetoTextStrength,
+				y: newY * magnetoTextStrength,
+				duration: 1,
+				ease: Power4.easeOut
+			})
+		}
+
+		const resetMagneto = () => {
+			gsap.to(magneto, {
+				x: 0,
+				y: 0,
+				duration: 1,
+				ease: Elastic.easeOut
+			})
+			gsap.to(magnetoText, {
+				x: 0,
+				y: 0,
+				duration: 1,
+				ease: Elastic.easeOut
+			})
+		}
+
+		magneto.addEventListener('mousemove', activateMagneto);
+		magneto.addEventListener('mouseleave', resetMagneto	);
+	</script>
+</body>
+</html>
